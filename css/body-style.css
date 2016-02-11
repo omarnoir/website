@@ -103,8 +103,11 @@ a span{
      border-radius:3px;
      box-shadow:0 0 2px rgba(0,0,0,.5);
     transform:scale(0) rotate(-12deg);
+    transition:all .5s;
+    opacity:0;
 }
 
 a:hover span, a:focus span{
-     transform:scale(1) rotate(0);        
+     transform:scale(1) rotate(0);   
+    opacity:1;
 }

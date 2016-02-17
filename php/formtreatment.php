@@ -1,26 +1,30 @@
 <?php 
-$nom=$HTTP_POST_VARS['user_name']; 
-$mail=$HTTP_POST_VARS['user_email']; 
-$objet=$HTTP_POST_VARS['user_objet']; 
-$message=$HTTP_POST_VARS['user_message']; 
+$name=htmlspecialchars($_POST['name']); 
+$email=htmlspecialchars($_POST['email']); 
+$subject=$_POST['subject']; 
+$message=$_POST['message'];  
 
 /////voici la version Mine 
 $headers = "MIME-Version: 1.0\r\n"; 
-
 //////ici on détermine le mail en format text 
-$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n"; 
-
+$headers .= "Content-type: text/plain; charset=utf-8\r\n"; 
 ////ici on détermine l'expediteur et l'adresse de réponse 
-$headers .= "From: $nom <$mail>\r\nReply-to : $nom <$mail>\nX-Mailer:PHP"; 
+$headers .= 'FROM:' . htmlspecialchars($email);
 
-$subject="$objet"; 
+//$subject .= 'de : ' . htmlspecialchars($_POST['name']) .' mail : ' . htmlspecialchars($_POST['email']);
+  $message .= "\n\nEmetteur du message : "  . $name . 
+                "\nMail de l'émetteur : " . $email .
+                "\nSujet du mail : " . $subject;
+
 $destinataire="omardiabira@gmail.com"; //remplacez "webmaster@votre-site.com" par votre adresse e-mail
-$body="$message"; 
-if (mail($destinataire, $subject, "ok ca fonctionnel" ,"MIME-Version: 1.0")) { 
-echo "Votre mail a été envoyé<br>"; 
-} else { 
+
+
+if (mail($destinataire,$subject,$message,$headers)) { 
+    echo "Votre mail a été envoyé<br>";
+} 
+else { 
 echo "Une erreur s'est produite"; 
-echo "$nom";
+    
 } 
 ?></p>
 <p align="center">Vous allez bientot etre redirigé vers la page d'acceuil<br>

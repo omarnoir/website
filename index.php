@@ -97,19 +97,19 @@
 <form action="php/formtreatment.php" method="post">
     <div>
         <label for="name">Nom :</label>
-        <input type="text" id="name" name="user_name"/>
+        <input type="text" id="name" name="name"/>
     </div>
     <div>
         <label for="email">Courriel :</label>
-        <input type="email" id="email" name="user_email"/>
+        <input type="email" id="email" name="email"/>
     </div>
     <div>
-        <label for="objet">Object :</label>
-        <input type="text" id="objet" name="user_objet"/>
+        <label for="subject">Objet :</label>
+        <input type="text" id="subject" name="subject"/>
     </div>
     <div>
         <label for="message">Message :</label>
-        <textarea id="message" name="user_message"></textarea>
+        <textarea id="message" name="message"></textarea>
     </div>
     <div class="button">
         <button type="submit">Envoyer votre message</button>

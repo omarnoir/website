@@ -13,25 +13,13 @@
      </head>
 
      <body>
-         
-        <div class="container">
-            <div class="cbp-af-header">
-                <div class="cbp-af-inner">
-                    <h1>Omar&ko</h1>
-                    <nav>
-                    <a href="#">Nous joindre</a>
-                    <a href="#">Formation</a>
-                    <a href="#">Préstations</a>
-                    <a href="#">Zone d'intervention</a>
-                </nav>
-            </div>
-        </div>
+        <?php include("part/header.php"); ?>
 
 
        <section id="section1">
            <ul id="icons">
             <li>
-                <a href="#section2">
+                <a href="screen.php">
                 <img src="icons/computer1.png" alt="" />
                 <span>Pb sur un écran ?</span>
                 </a>
